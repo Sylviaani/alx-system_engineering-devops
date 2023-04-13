@@ -1,4 +1,3 @@
 #!/bin/bash
-echo "pwd"
-$ wc -l file echo "pwd"
+"pwd"
 
