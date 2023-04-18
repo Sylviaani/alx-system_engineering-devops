@@ -1,2 +1,2 @@
 #!/bin/bash
-decoded=$(echo "$acrostic" | awk '{print substr($0, 1, 1)} | tr -d '|n') 
+cut -c 1 | tr -d '\n' | sed 's/ //g' 
