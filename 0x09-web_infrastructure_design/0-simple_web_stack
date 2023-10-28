@@ -1,1 +1,26 @@
 https://imgur.com/a/lrSg3KH
+
+POV: A user wants to gain access to my website but does not understand the features of my website.
+This is the discussion I am having with him/her.
+
+What is a server? 
+ANS:A server is a device, a virtual device or computer program or providing functionality for other programs or decices, called "CLIENTS".
+ 
+ What is the role of the domain name?
+ ANS: A domain name is a web address that is unique and can be acquired through domain registration.
+ 
+ What is the role of the application server?
+ Ans: the role is to execute the business logic of the website's application.
+
+ What is the role of the database?
+ANS: the role is to store and manage data for the websites application"
+
+What is the server using to communicate with the computer of the user requesting the website?
+ANS: The server uses the computer's HTTP (HyperText Transfer Protocol) to communicate.
+
+THE ISSUES:
+SPOF: This is the Single Point of Failure. The infrastructure here is running on a single server. So if the server fails, the website as a whole crashes.
+
+DOWNTIME: When there is a need to check the performance and maintenance of the server, the server will need to be restatred and as a result, the downtime of the website occurs.
+
+If there is an incoming traffic on one server, the website crashes. this is because the infrastructure can onbly handle a constricted amount of traffic. 
