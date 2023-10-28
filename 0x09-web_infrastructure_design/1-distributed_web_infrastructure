@@ -1,0 +1,5 @@
+https://imgur.com/a/v6kVxQG
+
+In this level, we added a new server, a load balancer that effectively distruibutes and manages the traffic. the DNS directs the IP address of the load balancer.
+
+The Load balancer is used for the balancing and distributing evenly the incoming traffic between both servers.
