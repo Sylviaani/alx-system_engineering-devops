@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #script that connects my server with ssh key
 
-ssh -1 ~/.ssh/school ubuntu@34.232.76.197
+ssh -i ~/.ssh/school ubuntu@34.232.76.197
