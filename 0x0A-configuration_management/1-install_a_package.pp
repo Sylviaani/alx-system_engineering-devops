@@ -1,6 +1,6 @@
 #installing a package
 
-exec { 'pkill' :
+exec { 'pkill':
 command  => 'pkill killmenow',
 provider => 'shell',
 }
