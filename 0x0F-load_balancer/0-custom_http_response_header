@@ -1,14 +1,33 @@
 #!/usr/bin/env bash
 # script that configure Nginx so that its HTTP response contains a custom header
 
-var=$(hostname)
-new_string="error_page 404 \/custom_404.html;\n location \/redirect_me {\n return 301 \$scheme:\/\/www.google.com;"
-new_string2="server {\n\tadd_header X-Served-By $var;"
-apt-get update -y
-apt-get install nginx -y
-echo "Hello World!" > /usr/share/nginx/html/index.html
-mkdir -p /var/www/html
-echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
-sudo sed -i -E "s/^[^#]+location \/ \{/$new_string/" /etc/nginx/sites-available/default
-sudo sed -i -E "s/^server \{/$new_string2/" /etc/nginx/sites-available/default
+sudo apt -y update
+sudo apt -y install nginx
+sudo service nginx start
+sudo echo 'Hello World!' | tee /var/www/html/index.html
+sudo echo -e "Ceci n'est pas une page\n" | tee /var/www/html/404.html
+sudo echo "server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        add_header X-Served-By $HOSTNAME;
+        server_name _;
+
+        location /redirect_me {
+                return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        }
+
+        location / {
+                try_files \$uri \$uri/ =404;
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+                root /var/www/html;
+                internal;
+        }
+}" | sudo tee /etc/nginx/sites-enabled/default
 sudo service nginx start
