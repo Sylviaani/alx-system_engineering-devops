@@ -30,4 +30,5 @@ sudo echo "server {
                 internal;
         }
 }" | sudo tee /etc/nginx/sites-enabled/default
+
 sudo service nginx start
