@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# script that adds subdomains to the domain zone
+
+function get_domain {
+	local subdomain=$1
+	local domain=$2
+	local record=$(dig $subdomain.$domain | awk 'NR==14{print $0}')
+	local record_type=$(echo "$record" | awk '{print $4}')
+	local ip=$(echo "$record" | awk '{print $5}')
+	echo "The subdomain $subdomain is a $record_type record and points to $ip"
+}
+
+if [ $# -eq 2 ]; then
+	get_domain $2 $1
+else
+	get_domain "www" $1
+	get_domain "lb-01" $1
+	get_domain "web-01" $1
+	get_domain "web-01" $1
+fi
