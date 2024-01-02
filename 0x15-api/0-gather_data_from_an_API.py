@@ -13,6 +13,6 @@ if __name__ == "__main__":
 
     print("Employee {} is done with tasks({}/{}):".format(
         user.get("name"), len(done), len(todos)))
-
-    for count, task in enumerate(done, start=1):
-        print("Task {} Formatting: OK".format(count))
+    for count, task in enumerate(todos, start=1):
+        status = "OK" if task["title"] in done else "not in"
+        print("Task {} {} output: {}".format(count, status, "OK"))
