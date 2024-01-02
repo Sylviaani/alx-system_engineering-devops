@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     done = [task["title"] for task in todos if task("completed") is True]
 
-    print("Employee {} is done with tasks({len(done)}/{len(todos)}):")
-    print("{employee['name']}: {len(done)} {len(todos)}")
+    print("Employee {} is done with tasks({len(done)}/{len(todos)}):".format(
+        user.get("name"), len(done), len(todos)))
     for task in done:
         print("\t{task}")
