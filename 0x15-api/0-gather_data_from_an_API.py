@@ -10,6 +10,6 @@ if __name__ == "__main__":
 
     done = [tasks["title"] for task in todos if task[completed]]
 
-    print("Employee {} is done with tasks({}/{}):".format(
+    print("Employee (employee['name']  is done with tasks({}/{}):".format(
         user.get("name"), len(done), len(todos)))
     [print("\t {}".format(c)) for task in done]
