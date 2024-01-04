@@ -14,6 +14,9 @@ if __name__ == "__main__":
 
     with open("{}.csv".format(user_id), "w", newline="") as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-        [writer.writerow(
-            [user_id, username, t.get("completed"), t.get("title")]
-         ) for t in todos]
+        header = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
+        writer.writerow(header)
+
+        for t in todos:
+            row = [user_id, username, t.get("completed"), t.get("title")]
+            writer.writerow(row)
