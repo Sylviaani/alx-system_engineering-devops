@@ -4,7 +4,7 @@
 import requests
 
 def recurse(subreddit, hot_list=[], after=None):
-url = f'https://www.reddit.com/r/{subreddit}/hot.json'
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     header = {"User-Agent": "Chrome"}
     params = {"limit": 100, "after": after}
 
