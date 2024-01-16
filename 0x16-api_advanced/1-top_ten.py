@@ -3,8 +3,8 @@
 
 import requests
 
-def top_ten(subreddit);
-url = f'https://www.reddit.com/r/{subreddit}/hot.json'
+def top_ten(subreddit):
+    url = f'https://www.reddit.com/r/{subreddit}/hot.json'
     params = {'limit': 10}
     header = {'User-agent': 'Chrome'}
     try:
