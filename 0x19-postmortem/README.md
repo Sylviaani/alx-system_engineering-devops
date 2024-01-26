@@ -1,0 +1,10 @@
+Postmortem Task 0
+
+Duration: 1 hour (1:00 PM - 2:00 PM)
+Impact: Codes were not working after several attempts thereby destroying the server. Users started experiencing an override in the UI/UX and this affected 30% of our users. The root cause was later discovered to be, different working environments were being used at the same time.
+
+Timeline: 1:00 PM - The problem was identified when we started getting an alarming influx of emails from our users, all complaining about the same issue. 1:10 PM - The engineering team was immediately notified and they promptly responded. Initially, the team's first assumptions as to the issue was "incorrect output of code" but they delved deeper to be more accurate. 1:40 PM - After a series of searching and investigating, the team was finally able to uncover the root cause and they identified to be "one code but in different formatting". 1:45 PM - The team's immediate action to solving the issue was to stop the concurrent loop which the code kept on creating. 1:50 PM - After 5 mins, they stopped the loop and proceeded to rebuilding the code from scratch, making sure not to repeat the same mistake. 2:00 PM - The codes were fixed and the UI/UX could allow our users enjoy a seamless experience on the website.
+
+Looking back at the experience, I could say that what neeed improving was 'effective communication'. If the team was able to keep up the communication among themselves, they would have been able to notice the issue sooner even before pushing the codes. Another thing that can be improved is in the use of libraries, logs and documentation, if that was implemented then, the team would'nt have to build the codes from scratch. Another thing that can be improved is in the testing and deployment, I believe that before any code is pushed out, let there be an immediate deploying and testing before pushing, thereby you see your codes working just the way you want them to.
+
+Oh and one more thing, I do think the whole engineering should have been FIRED afterwards.:)
